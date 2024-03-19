@@ -57,7 +57,13 @@ class rekeningBank {
 	#saldo = 0;
 
 	// Deklarasi constructor class
-	constructor(props) {}
+	constructor(props) {
+		this.nama = props.nama;
+		this.noRek = props.noRek;
+		this.alamat = props.alamat;
+		this.email = props.email;
+		this.noHp = props.noHp;
+	}
 
 	// Method untuk setor uang
 	deposit(jumlahUang) {
@@ -124,11 +130,8 @@ class rekeningBank {
 
 	// Method nampilin data rekening/akun bank
 	liatDataRek() {
-		const tgl = this.tglLahir.getDate();
-		const bulan = this.tglLahir.getMonth() + 1;
-		const tahun = this.tglLahir.getFullYear();
 		alert(
-			`===>>> DATA REKENING <<<===\nNama: ${this.nama}\nNo. Rekening: ${this.noRek}\nAlamat: ${this.alamat}\nTanggal Lahir: 0${tgl}-0${bulan}-${tahun}\nNo.Telepon: ${this.noHp}`
+			`===>>> DATA REKENING <<<===\nNama: ${this.nama}\nNo. Rekening: ${this.noRek}\nAlamat: ${this.alamat}\nEmail: ${this.email}\nNo.Telepon: ${this.noHp}`
 		);
 	}
 }
@@ -138,6 +141,6 @@ let rekAmmar = new rekeningBank({
 	nama: 'Ammar',
 	noRek: '987654',
 	alamat: 'Tegal',
-	tglLahir: new Date('2003-03-08'),
+	email: 'ammar@mail.com',
 	noHp: '0812345',
 });
